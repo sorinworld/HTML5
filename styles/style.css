@@ -32,9 +32,13 @@ body {
 /* 메인 */
 .main{
   background: lightgreen;
-  height: 50vh;
+  min-height: 450px;
   display: flex;
-  flex-direction: row;
+  flex-direction: flex;
+  flex-wrap: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
 }
 
 .group1{
@@ -47,6 +51,7 @@ body {
 }
 .group3{
   background-color: gold;
+  /* flex-grow: 1; */
   width: 190px;
 }
 
@@ -55,7 +60,6 @@ body {
   background: skyblue;
   height: 10vh;
   clear: both;
-  /* margin-top: 150px; */
 }
 /* 푸터 */
 .footer{
