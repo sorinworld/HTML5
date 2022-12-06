@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html{
+  font-size: 10px;
+}
+
 /* 링크스타일 */
 a{
   color: inherit;
@@ -14,12 +18,13 @@ a{
 
 /* 본문스타일 */
 body {
+  /* em, rem 단위로 사용해보기 */
+  font-size: 1.4rem;
   color: #212121;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, 
   system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", 
   "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  font-weight: 100;
 }
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer-inner{
@@ -30,7 +35,6 @@ body {
 .header{
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
   position: relative;
 }
@@ -50,9 +54,9 @@ body {
   /* position 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
   /* position: relative;
   right: -10px;*/
+  /* transform 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
   transform: translate(10px);
 }
-/* transform 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
  
 
 .member li{
