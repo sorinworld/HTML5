@@ -32,7 +32,9 @@ body {
   /* em, rem 단위로 사용해보기 */
   font-size: 1.4rem;
   color: #212121;
-  background: #ccc;
+  background: #ccc 
+  linear-gradient(
+    to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, 
   system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", 
   "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -90,6 +92,51 @@ body {
   margin-right: 4px;
 }
 
+/* 메인메뉴 */
+.navigation {
+  padding-bottom: 80px;
+}
+
+.menu {
+  border-top: 2px solid #212121;
+  background: #e85e2c
+  linear-gradient(
+  to bottom,
+  #ef9126 0%,
+  #e85e2c 35%,
+  #e85e2c 70%,
+  #ef9126 100%);
+  border-radius: 0 0 5px 5px;
+  /* height 값을 추가함으로써 없애도됌 */
+  /* display: flow-root; */
+  padding-left: 230px;
+  height: 47px;
+}
+
+.menu-item {
+  float: left;
+  border-left: 2px solid #fff;
+}
+
+.menu-button {
+  border: 0;
+  background: transparent;
+  padding: 0 23px;
+  line-height: 45px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 0px 0 #000, 0px 1px 0 #000;
+}
+
+.sub-menu {
+  background-color: pink;
+  /* 포지션으로 떠있게해줌으로써 메뉴 아이템에 영향을 안줌 */
+  position: absolute;
+  /* 임시로 숨김 */
+  display: none;
+}
+
 /* 비주얼 */
 .visual{
   background: orange;
@@ -128,7 +175,9 @@ body {
 }
 /* 푸터 */
 .footer{
-  background: gray;
+  background: #ccc 
+  linear-gradient(
+    to top, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
 .footer-inner{
   background: lightgrey;
