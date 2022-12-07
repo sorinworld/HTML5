@@ -235,9 +235,26 @@ body {
 }
 
 /* 비주얼 */
+/* @는 무언가를 선언하는 것 */
+@keyframes moveEffect{
+  0%{
+    font-size: 12px;
+  }
+  100%{
+    font-size: 24px;
+  }
+}
+
+/* 광고영역 등 height 고정값을 써야하는 부분이 있음. */
 .visual{
-  background: orange;
-  height: 10vh;
+  background: pink;
+  height: 120px;
+}
+
+.visual-text{
+  background-color: coral;
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
 }
 /* 메인 */
 .main{
