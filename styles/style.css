@@ -57,7 +57,9 @@ body {
 .logo{
   position: absolute;
   top: 45px;
-  left: 60px; 
+  left: 60px;
+  /* static이 아닌 포지션에서 z-index를 쓸 수 있음 */
+  z-index: 10; 
 }
 
 /* 텍스트 링크 모음 */
@@ -111,9 +113,21 @@ body {
   /* display: flow-root; */
   padding-left: 230px;
   height: 47px;
+  position: relative;
 }
 
+.menu > li:nth-child(-n + 3) {
+  position: relative;
+}
+
+/* menu안에 있는 모든 li들이(+sub) float됌 */
+/* .menu li {
+  float: left;
+} */
+
+/* positon은 자식요소에 relative주려고 */
 .menu-item {
+  /* position: relative; */
   float: left;
   border-left: 2px solid #fff;
 }
@@ -136,11 +150,13 @@ body {
 }
 
 /* line-height를 줌으로써 딱맞게 맞춰서 만들 수 있는 것 
-  padding보다는 line-height를 쓰는게 편리*/
+  padding보다는 line-height를 쓰는게 편리
+  (애초에 부모의 패딩값이 같기때문에 똑같은 라인으로 있는 것
+  before나 after 둘다 inline으로 만들어짐
+  before는 글자 앞에 생기기 때문에 after를 사용해야하는 것*/
 .is-active .menu-button::after {
   content: "";
   display: block;
-  background-color: lime;
   border-top: 2px solid #000;
 }
 
@@ -148,8 +164,34 @@ body {
   background-color: pink;
   /* 포지션으로 떠있게해줌으로써 메뉴 아이템에 영향을 안줌 */
   position: absolute;
+  top: 47px;
   /* 임시로 숨김 */
   display: none;
+}
+
+.menu-html, .menu-css, .menu-standards { 
+  left: 0;
+}
+.menu-accessibility, 
+.menu-qna, 
+.menu-archive {
+  right: 0;
+}
+
+/* none후에 꼭 block으로 안보여줘도 됌
+  white-space=>공백 =>줄바꿈하지 않게해줌 */
+.is-active .sub-menu {
+  display: block;
+  white-space: nowrap;
+}
+
+/* block상자는 block단위로
+  inline상자는 콘텐츠 단위로 줄바꿈 -공간이 충분하지 않으면
+  width가 auto면 부모영역을 상속받음 */
+.sub-menu li {
+  display: inline-block;
+  padding-left: 1em;
+  background-color: gold;
 }
 
 /* 비주얼 */
