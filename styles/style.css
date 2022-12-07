@@ -117,7 +117,7 @@ body {
   float: left;
   border-left: 2px solid #fff;
 }
-
+/* 구체성 점수->10점 */
 .menu-button {
   border: 0;
   background: transparent;
@@ -127,6 +127,21 @@ body {
   font-weight: 700;
   color: #fff;
   text-shadow: 1px 0px 0 #000, 0px 1px 0 #000;
+}
+
+/* 한칸 띄운거는 포함되어 있다는 뜻
+  구체성 점수->20점 */
+.is-active .menu-button { 
+  color: #ff0;
+}
+
+/* line-height를 줌으로써 딱맞게 맞춰서 만들 수 있는 것 
+  padding보다는 line-height를 쓰는게 편리*/
+.is-active .menu-button::after {
+  content: "";
+  display: block;
+  background-color: lime;
+  border-top: 2px solid #000;
 }
 
 .sub-menu {
