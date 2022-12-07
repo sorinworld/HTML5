@@ -8,6 +8,8 @@
   <link rel="stylesheet" as="style" crossorigin href=
   "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="./styles/style.css" />
+  <!-- defer를 추가함으로써 헤드안에 스크립트 넣어도 동작 -->
+  <script src="./js/main.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -130,7 +132,11 @@
       </ul>
       </nav>
   </header>
-  <div class="visual">VISUAL</div>
+  <div class="visual">
+    <div class="visual-text">
+      Web Standard &amp; Accessibility
+    </div>
+  </div>
   <main class="main">
     <div class="group group1">Group1</div>
     <div class="group group2">Group2</div>

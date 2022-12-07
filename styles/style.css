@@ -219,9 +219,10 @@ body {
   content: "\e801";
 }
 
-/* 부모인 inline이랑 겹치면 문제가 생기기때문에 block으로 설정하지말고
+/* 부모인 inline이랑 겹치면(a는 부모에게 상속받아 기본 inline) 문제가 생기기때문에 block으로 설정하지말고
   inline-block이나 inline으로 해야함. inline-block을 써야 흐름은 가로로
-  그리고 block처럼 유지 */
+  그리고 block처럼 유지 
+  아웃라인 설정시 위의 구분선이랑 겹치기때문에 padding값을 10->6px으로 바꾸고 sub-menu의 padding 값도 조절*/
 .sub-menu a {
   display: inline-block;
   padding: 6px 0;
