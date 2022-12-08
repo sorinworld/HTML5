@@ -87,7 +87,7 @@ body {
   text-transform: uppercase;
 }
 
-/* 마지막 li 요소에 포함된 a 요소를 선택ㅎ사여 오른쪽 padding 값을 0으로 재정의 하는 방법 */
+/* 마지막 li 요소에 포함된 a 요소를 선택하여 오른쪽 padding 값을 0으로 재정의 하는 방법 */
 /* .member li:last-child a{
   padding-right: 0;
 } */
@@ -235,16 +235,19 @@ body {
 }
 
 /* 비주얼 */
-/* @는 무언가를 선언하는 것 / at sign rule */
+/* @는 무언가를 선언하는 것 / at sign rule 
+  padding이나 margin은 reflow를 유발함 */
 @keyframes moveEffect{
   0%{
     font-size: 12px;
     color: rgba(0,0,0,0.2);
+    /* color: hsla(0, 0%, 0%, 0); */
     transform: translate(0,0);
   }
   100%{
     font-size: 24px;
     color: rgba(0,0,0,1);
+    /* color: hsla(0, 0%, 0%, 1); */
     transform: translate(400px, 75px);
   }
 }
@@ -260,11 +263,17 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: coral;
   animation-name: moveEffect;
-  animation-duration: 2000ms;
-  /* animation 끝난 상태로 채울 때 */
+  animation-duration: 3000ms;
+  animation-timing-function: ease-in-out;
+  /* animation 끝난 상태로 채울 때 -animation-fill-mode: forwards; */
   animation-fill-mode: forwards;
-  display: inline-block;
+  /* background-color를 넣었을때 상자가 밖으로 튀어나가기때문에 display: inline-block 값을 주는 것
+  position: absolute;로 띄워놔둬됌 -하지만 그럴경우 position: relative;를 [.visual]에 넣어놔야함.
+  overflow: hidden을 줄 경우 디자인에 제한이 생기기때문에 사용 지양 -문제 유발 가능성 */
+  /* display: inline-block; */
+  position: absolute;
 }
+
 /* 메인 */
 .main{
   background: lightgreen;
