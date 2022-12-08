@@ -143,17 +143,27 @@
     <div class="group group1">
       <section class="login">
         <h2 class="login-title">로그인</h2>
-        <!-- 이 form은 html5에서는 필수가 아님. 필수/선택 사항이 둘 다 있을때 쓰면 좋음. -->
-        <form action="" class="login-form">
+        <!-- 이 form은 html5에서는 필수가 아님. 필수/선택 사항이 둘 다 있을때 쓰면 좋음. 
+        method : get or post 방법(?)
+        form action에는 서버 url이 들어와야 함 -->
+        <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="login-form">
           <fieldset>
             <legend>회원 로그인 폼</legend>
+            <!-- id를 for에 꼭 연결해줘야함. form에서는 id가 쓰일 수 밖에 없음.
+            label의 역할 : 티셔츠의 라벨같은 역할.
+            input의 입력서식을 설명해주는 역할 / 아이디 부분을 누르면 입력 서식 쪽으로 포커스됌 =접근성 향상
+            명시적인 labeling / required : 논리 속석
+            form validation - js가 제일 많이 쓰임, 정규표현식 패턴 -->
             <div class="user-email">
-              <!-- id를 for에 꼭 연결해줘야함
-              label의 역할 : 티셔츠의 라벨같은 역할.
-              input의 입력서식을 설명해주는 역할 / 아이디 부분을 누르면 입력 서식 쪽으로 포커스됌 =접근성 향상 -->
               <label for="userEmail">아이디</label>
-              <input type="email" id="userEmail" />
+              <input type="email" id="userEmail" name="user-email"
+             placeholder="fe@duid.dev" required />
             </div>
+            <div class="user-pw">
+              <label for="userpw">비밀번호</label>
+              <input type="password" id="userpw" name="userpw" placeholder="8자리 이상" required />
+            </div>
+            <button type="submit" class="login-button">로그인</button>
           </fieldset>
         </form>
         <ul class="sign">
