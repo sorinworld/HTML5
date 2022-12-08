@@ -257,24 +257,69 @@ body {
   }
 }
 
+@keyframes fadeEffect{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
 /* 광고영역 등 height 고정값을 써야하는 부분이 있음. */
 .visual{
   height: 120px;
+  /* before와 after의 기준 - position: relative */
   position: relative;
 }
 
+/* mark up에서 div를 만들지 않기위해 before, after를 만든것*/
+.visual::before, 
+.visual::after{
+  content: "";
+  position: absolute; 
+  /* 부모와 똑같이 겹쳐놓게 하기위해 준 value */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* name duration은 무조건 앞에 선언! */
+  animation: fadeEffect 2000ms infinite alternate;
+}
+
+.visual::before {
+  /* 이미지 자를때 여백이 없는게 좋음 - 이미지가 잘릴 수도 있음. 
+  투명한 셀로판지를 붙인 느낌*/
+  /* background-image: url(./images/ani_flower_01.png), url(./images/ani_flower_02.png);
+  background-repeat: no-repeat;
+  background-position: 0 -10px, 600px 0; */
+  background: 
+  url(./images/ani_flower_01.png) no-repeat 0 -10px,  
+  url(./images/ani_flower_02.png) no-repeat 600px 0;
+}
+.visual::after {
+  /* background-color: pink; */
+  background: 
+  url(./images/ani_flower_03.png) no-repeat 300px 0,  
+  url(./images/ani_flower_04.png) no-repeat 800px 0;
+  animation-delay: 1000ms;
+}
+
+/* [fadeEffect-flower animation] 
+  투명도(opacity:color는 글자는 되지만 상자는 안됌)-key frames 선언, ::before/::after가 교차하면서 재생,
+  무한반복(infinite) */
+
 .visual-text{
   font-family: Georgia, 'Times New Roman', Times, serif;
-  animation-name: moveEffect;
-  animation-duration: 3000ms;
-  animation-timing-function: ease-in-out;
   /* animation 끝난 상태로 채울 때 -animation-fill-mode: forwards; */
-  animation-fill-mode: forwards;
   /* background-color를 넣었을때 상자가 밖으로 튀어나가기때문에 display: inline-block 값을 주는 것
   position: absolute;로 띄워놔둬됌 -하지만 그럴경우 position: relative;를 [.visual]에 넣어놔야함.
   overflow: hidden을 줄 경우 디자인에 제한이 생기기때문에 사용 지양 -문제 유발 가능성 */
-  /* display: inline-block; */
-  position: absolute;
+  /* display: inline-block; 은 텍스트가 after로 가려지기 때문에 position: relative를 쓴 것
+  (absolute를 써도 되지만 여기서는 relative)*/
+  animation: moveEffect 400ms ease-in-out forwards;
+  position: relative;
+  z-index: 1;
 }
 
 /* 메인 */
