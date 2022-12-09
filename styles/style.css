@@ -438,6 +438,7 @@ body {
   width: 35%;
 }
 
+/* text-align은 블럭요소에서만 움직임 -부모의 박스에 맞춰서 */
 .sign li:last-child {
   width: 65%;
   text-align: right;
@@ -455,6 +456,20 @@ body {
   font-family: 'fontello';
   margin-right: 8px;
   color: orangered;
+}
+
+/* 유효성 검사 배너 */
+.validation-list {
+  background-color: yellow;
+  margin-top: 25px;
+}
+
+/* 마진 병합 - 첫번째 영역에 margin-top이 있어도 겹쳐져서 margin이 먹지 않은 것 처럼 보임.
+  등간격 배치를 위해 / padding은 겹치지 않지만 margin은 겹침 -normal flow 일 때 -flex는 병합 안됌.
+  부모의 25px에 10px가 포함된 것. / 그러나 padding이나 border로 경계(선을 그어줄수)를 줄 수 있음. -부모에게 */
+.validation-list li {
+  background-color: pink;
+  margin-top: 10px;
 }
 
 /* .sign > li:nth-child(2) {
