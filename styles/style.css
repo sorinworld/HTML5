@@ -460,7 +460,6 @@ body {
 
 /* 유효성 검사 배너 */
 .validation-list {
-  background-color: yellow;
   margin-top: 25px;
 }
 
@@ -468,12 +467,26 @@ body {
   등간격 배치를 위해 / padding은 겹치지 않지만 margin은 겹침 -normal flow 일 때 -flex는 병합 안됌.
   부모의 25px에 10px가 포함된 것. / 그러나 padding이나 border로 경계(선을 그어줄수)를 줄 수 있음. -부모에게 */
 .validation-list li {
-  background-color: pink;
   margin-top: 10px;
 }
 
-/* .sign > li:nth-child(2) {
-  margin-left: 25px;
+.validation-list a {
+  display: block;
+  background:url(./images/validation_icon.png) no-repeat 25px 50%, 
+  #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 8px 50px;
+  border-radius: 30px;
+  border: 1px solid #aaa;
+}
+
+.validation-list a:hover,
+.validation-list a:focus {
+  color: #f00;
+}
+/* .validation-list a::before {
+  content: url(./images/validation_icon.png);
+  vertical-align은 인라인 박스가 가질수 있음
+  vertical-align: middle;
 } */
 
 /* 슬로건 */
