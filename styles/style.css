@@ -422,17 +422,34 @@ body {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
   padding: 4px 10px;
-  display: flex;
+  /* 공백 문자를 없애기 위해 font-size:0;으로 한 것 */
+  font-size: 0;
+  /* display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-between; */
+}
+
+.sign li { 
+  font-size: 14px;
+  display: inline-block;
+}
+
+.sign li:first-child {
+  width: 35%;
+}
+
+.sign li:last-child {
+  width: 65%;
+  text-align: right;
 }
 
 .sign a {
-  display: block;
+  display: inline-block;
   padding: 6px 0;
   /* letter-spacing은 자간 */
   letter-spacing: -1px;
 }
+
 .sign a::before {
   content: '\e804';
   font-family: 'fontello';
