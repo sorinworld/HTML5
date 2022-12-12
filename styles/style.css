@@ -3,7 +3,7 @@
 @import url(./reset.css);
 
 /* 숨김 콘텐츠 -무조건 숨길거야~ */
-.a11y-hidden, legend{
+.a11y-hidden, legend {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -466,7 +466,8 @@ body {
 /* 마진 병합 - 첫번째 영역에 margin-top이 있어도 겹쳐져서 margin이 먹지 않은 것 처럼 보임.
   등간격 배치를 위해 / padding은 겹치지 않지만 margin은 겹침 -normal flow 일 때 -flex는 병합 안됌.
   부모의 25px에 10px가 포함된 것. / 그러나 padding이나 border로 경계(선을 그어줄수)를 줄 수 있음. -부모에게 */
-.validation-list li {
+/* margin-top: 10px;를 부모에게 주는 이유는 여백을 계속 수정하지 않기 위해 - 부품화 시킨 것 */
+  .validation-list li {
   margin-top: 10px;
 }
 
@@ -488,6 +489,60 @@ body {
   vertical-align은 인라인 박스가 가질수 있음
   vertical-align: middle;
 } */
+
+/* 웹 관련 용어 */
+.term {
+  margin-top: 20px;
+  border: 1px solid #aaa;;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+
+.term-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.term-list { 
+  margin-top: 10px;
+}
+
+.term-list div {
+  margin-top: 10px;
+  display: flow-root;
+}
+
+.term-list-subject, 
+.term-list-brief {
+  float: right;
+  width: 145px;
+} 
+
+.term-list-subject {
+  color: #296897;
+  font-weight: 500;
+}
+
+.term-list-thumnail {
+  float: left;
+}
+
+.term-list-thumnail img {
+  vertical-align: middle;
+}
+
+.term-list-brief {
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.cross .term-list-subject,
+.cross .term-list-brief{
+  float: left;
+}
+.cross .term-list-thumnail{
+  float: right;
+}
 
 /* 슬로건 */
 .slogan{
