@@ -341,8 +341,6 @@ body {
   width: 250px;
 }
 .group2{
-  background-color: salmon;
-  background-image: ;
   width: 380px;
 }
 .group3{
@@ -493,7 +491,7 @@ body {
 /* 웹 관련 용어 */
 .term {
   margin-top: 20px;
-  border: 1px solid #aaa;;
+  border: 1px solid #aaa;
   border-radius: 5px;
   padding: 10px 15px;
   background: #ccc linear-gradient(to bottom, #ccc, #eee);
@@ -542,6 +540,58 @@ body {
 }
 .cross .term-list-thumnail{
   float: right;
+}
+
+/* 검색폼 */
+.search-form {
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px;
+}
+/* 필드셋에는 레이아웃을 바꾸지 않는것을 추천 */
+.search-form-inner {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form-group {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-right: 10px;
+}
+
+/* 강제 줄바꿈 금지 white-space - flex가 아닌 상태에서도 쓸 수 있으니까
+  여기서는 shirink로
+  .form-group-label => flex item */
+.form-group-label {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+
+/* 크로스 브라우징에서 다르게 나올때 min-width */
+.form-group-input {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  height: 24px;
+  padding: 1px 1px 1px 5px;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.search-button {
+  flex-shrink: 0;
+  background-color: #000;
+  color: #fff;
+  height: 24px;
+  border: 0;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 1.2rem;
 }
 
 /* 슬로건 */
