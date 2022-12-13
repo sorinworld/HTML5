@@ -1,6 +1,7 @@
 @import url(./fonts.css);
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./module.css);
 
 /* 숨김 콘텐츠 -무조건 숨길거야~ */
 .a11y-hidden, legend {
@@ -667,7 +668,6 @@ body {
 }
 
 .news-title {
-  color: #e85e2c;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -695,6 +695,8 @@ body {
   font-weight: 500;
 }
 
+/* time은 inline이기 때문에 block으로 바꿔준 것
+  옆에 뭐가 놓이는게 아니니까 inline-block 보다는 block으로 넣어준 것 */
 .news-item-date {
   display: block;
   margin: 5px 0 10px;
@@ -712,6 +714,11 @@ body {
   font-size: 1.5rem;
 }
 
+.news-item-thumbnail img {
+  box-shadow: 0 15px 10px 5px #ccc;
+  margin-bottom: 15px;
+}
+
 
 .news-more {
   position: absolute;
@@ -719,6 +726,16 @@ body {
   right: -8px;
   padding: 8px;
   font-size: 1.5rem;
+}
+
+/* 신규 이벤트 및 관련 사이트 */
+
+.gradient-effect {
+
+}
+
+.accent-color {
+  color: #e85e2c;
 }
 
 /* 슬로건 */
