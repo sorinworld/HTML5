@@ -549,7 +549,8 @@ body {
   border-radius: 15px 15px 0 0;
   padding: 15px 25px 10px;
 }
-/* 필드셋에는 레이아웃을 바꾸지 않는것을 추천 */
+/* 필드셋에는 레이아웃을 바꾸지 않는것을 추천 
+  flex는 자식까지만 flex item, 손자에게는 영향을 끼치지 않음 */
 .search-form-inner {
   display: flex;
   flex-flow: row nowrap;
@@ -564,7 +565,7 @@ body {
 }
 
 /* 강제 줄바꿈 금지 white-space - flex가 아닌 상태에서도 쓸 수 있으니까
-  여기서는 shirink로
+  여기서는 shirink로 =축소되지 않게끔하려고
   .form-group-label => flex item */
 .form-group-label {
   flex-shrink: 0;
@@ -572,7 +573,8 @@ body {
 }
 
 
-/* 크로스 브라우징에서 다르게 나올때 min-width */
+/* 크로스 브라우징에서 다르게 나올때 min-width 
+  input에게 grow를 줘서 남은 영역을 차지하게 하려고 */
 .form-group-input {
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -592,6 +594,131 @@ body {
   border-radius: 3px;
   padding: 0 10px;
   font-size: 1.2rem;
+}
+
+/* 공지사항 및 자료실 */
+.board {
+  margin-top: 20px;
+  position: relative;
+}
+
+.tab-list {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.tab {
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  border-radius: 5px 5px 0;
+  padding: 5px 10px;
+  color: #666;
+}
+
+.is-select.tab{
+  background-color: #fff;
+  color: #e85e2c;
+  border-color: currentColor currentColor #fff currentColor;
+}
+
+.tab-panel {
+  display: none;
+  margin-top: 15px;
+}
+
+.board-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
+.icon-plus::before{
+  color: hsl(110, 50%, 50%, 1);
+}
+/* 클래스가 둘다 있는 선택 (띄워쓰기 하면안됌) */
+.is-select.tab-panel {
+  display: block;
+}
+
+.board-list li {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.board-list a {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.board-list time {
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+/* 새소식 */
+.news {
+  margin-top: 20px;
+  position: relative;
+}
+
+.news-title {
+  color: #e85e2c;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.news::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: #aaa
+  linear-gradient(to right, #ccc, #fff);
+}
+.news-link {
+  display: block;
+}
+
+.news-item {
+  margin-top: 35px;
+  padding-left: 130px;
+  position: relative;
+}
+
+.news-item-title {
+  font-weight: 500;
+}
+
+.news-item-date {
+  display: block;
+  margin: 5px 0 10px;
+}
+
+.news-item-brief {
+  line-height: 1.5;
+}
+
+.news-item-thumbnail {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
+.news-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+  font-size: 1.5rem;
 }
 
 /* 슬로건 */
