@@ -840,12 +840,12 @@ body {
 
 /* 인기사이트 */
 
-.site {
+.favorite {
   background-color: yellow;
   position: relative;
 }
 
-.popular-site {
+.favorite-site {
   background-color: pink;
 }
 
