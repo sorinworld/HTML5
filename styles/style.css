@@ -840,13 +840,13 @@ body {
 
 /* 인기사이트 */
 
-.favorite {
-}
-
 /* list-style-type:none을 주면 숫자를 스크린 리더가 안읽어줌
 overflow: hidden;는 읽어줌 */
+.favorite {
+  position: relative;
+}
+
 .favorite-list {
-  background-color: yellow;
   list-style-type:none;
   counter-reset: number 0;
 }
@@ -858,7 +858,6 @@ overflow: hidden;는 읽어줌 */
 .favorite-list li {
   margin-top: 10px;
   counter-increment: number;
-  background-color: pink;
   position: relative;
 }
 
@@ -875,9 +874,9 @@ overflow: hidden;는 읽어줌 */
   line-height: 1.5;
 }
 
-.favorite-list a{
+/* .favorite-list a{
   background-color: skyblue;
-}
+} */
 /* .no1::before {
   content: "1";
 }
@@ -896,11 +895,12 @@ overflow: hidden;는 읽어줌 */
   position: absolute;
   top: 50%;
   right: 0;
+  /* 12px크기의 컨텐츠를 반만큼 끌어올린것 -6px */
   margin-top: -6px;
   width: 9px;
   height: 11px;
   margin-left: auto;
-  background: lime url(./images/rank.png) no-repeat 100% 0;
+  background: url(./images/rank.png) no-repeat 100% 0;
 }
 
 .stop {
@@ -912,7 +912,6 @@ overflow: hidden;는 읽어줌 */
 }
 
 .favorite-more {
-  background-color: lightblue;
   position: absolute;
   top: -8px;
   right: -8px;
@@ -921,9 +920,43 @@ overflow: hidden;는 읽어줌 */
 
 /* 슬로건 */
 .slogan{
-  background: skyblue;
-  height: 10vh;
+  /* main에 flow-root를 줬지만 지원하지 않는 브라우저가 있을 수 있으니 추가로 clear: both로 이중으로 레이아웃을 잡아주는 역할 */
   clear: both;
+  position: relative;
+  padding: 15px 100px 15px 180px;
+}
+
+.slogan-title {
+  width: 110px;
+  height: 83px;
+  text-align: center;
+  line-height: 83px;
+  position: absolute;
+  bottom: -25px;
+  left: 35px;
+}
+
+.slogan-title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/coffee.png) no-repeat 0 0;
+}
+
+.slogan-content {
+  color: #a09784;
+}
+
+.slogan-content q::before {
+  display: inline-block;
+  font-size: 3em;
+  transform: translateY(10px);
+}
+.slogan-content q::after {
+  content: "";
 }
 
 /* 푸터 */
