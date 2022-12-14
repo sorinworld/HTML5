@@ -345,7 +345,6 @@ body {
   width: 380px;
 }
 .group3{
-  background-color: gold;
   width: 190px;
 }
 /* 로그인 영역 */
@@ -381,7 +380,8 @@ body {
   padding-bottom: 5px;
 }
 
-.user-email, .user-pw {
+.user-email, 
+.user-pw {
   margin-bottom: 5px;
 }
 
@@ -411,7 +411,7 @@ body {
   color: #fff;
   border: 0;
   padding: 0 8px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 13px;
 }
 
@@ -422,25 +422,17 @@ body {
   border-radius: 0 0 5px 5px;
   padding: 4px 10px;
   /* 공백 문자를 없애기 위해 font-size:0;으로 한 것 */
-  font-size: 0;
   /* display: flex;
   flex-flow: row nowrap;
   justify-content: space-between; */
 }
 
 .sign li { 
-  font-size: 14px;
   display: inline-block;
 }
 
 .sign li:first-child {
-  width: 35%;
-}
-
-/* text-align은 블럭요소에서만 움직임 -부모의 박스에 맞춰서 */
-.sign li:last-child {
-  width: 65%;
-  text-align: right;
+  margin-right: 16px;
 }
 
 .sign a {
@@ -449,11 +441,12 @@ body {
   /* letter-spacing은 자간 */
   letter-spacing: -1px;
 }
+/* text-align은 블럭요소에서만 움직임 -부모의 박스에 맞춰서 */
 
 .sign a::before {
-  content: '\e804';
+  /* content: '\e804';
   font-family: 'fontello';
-  margin-right: 8px;
+  margin-right: 8px; */
   color: orangered;
 }
 
@@ -471,12 +464,14 @@ body {
 }
 
 .validation-list a {
-  display: block;
   background:url(./images/validation_icon.png) no-repeat 25px 50%, 
   #ccc linear-gradient(to bottom, #ccc, #eee);
-  padding: 8px 50px;
+  padding: 0 15px 0 55px;
   border-radius: 30px;
+  line-height: 30px;
   border: 1px solid #aaa;
+  cursor: pointer;
+  display: block;
 }
 
 .validation-list a:hover,
@@ -499,7 +494,7 @@ body {
 }
 
 .term-title {
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -583,7 +578,8 @@ body {
   padding: 1px 1px 1px 5px;
   flex-grow: 1;
   min-width: 0;
-  max-width: 100%;
+  width: 100%;
+  font-size: 1.2rem;
 }
 
 .search-button {
@@ -611,12 +607,12 @@ body {
 .tab {
   border: 1px solid #aaa;
   background-color: #ccc;
-  border-radius: 5px 5px 0;
+  border-radius: 5px 5px 0 0;
   padding: 5px 10px;
   color: #666;
 }
 
-.is-select.tab{
+.is-select.tab {
   background-color: #fff;
   color: #e85e2c;
   border-color: currentColor currentColor #fff currentColor;
@@ -627,16 +623,6 @@ body {
   margin-top: 15px;
 }
 
-.board-more {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  padding: 8px;
-}
-
-.icon-plus::before{
-  color: hsl(110, 50%, 50%, 1);
-}
 /* 클래스가 둘다 있는 선택 (띄워쓰기 하면안됌) */
 .is-select.tab-panel {
   display: block;
@@ -661,16 +647,23 @@ body {
   margin-left: 10px;
 }
 
+.board-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
+.icon-plus::before{
+  color: hsl(110, 50%, 50%, 1);
+}
+
 /* 새소식 */
 .news {
   margin-top: 20px;
   position: relative;
 }
 
-.news-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
 .news::before {
   content: "";
   position: absolute;
@@ -681,18 +674,27 @@ body {
   background: #aaa
   linear-gradient(to right, #ccc, #fff);
 }
+
+.news-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 .news-link {
   display: block;
 }
 
 .news-item {
   margin-top: 35px;
-  padding-left: 130px;
+  /* padding-left: 130px; */
   position: relative;
+  display: flow-root;
 }
 
 .news-item-title {
   font-weight: 500;
+  width: 250px;
+  float: right;
 }
 
 /* time은 inline이기 때문에 block으로 바꿔준 것
@@ -700,18 +702,22 @@ body {
 .news-item-date {
   display: block;
   margin: 5px 0 10px;
+  width: 250px;
+  float: right;
 }
 
 .news-item-brief {
   line-height: 1.5;
+  width: 250px;
+  float: right;
 }
 
 .news-item-thumbnail {
-  position: absolute;
-  top: 2px;
+  /* position: absolute;
+  top: 3px;
   left: 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.5rem; */
 }
 
 .news-item-thumbnail img {
@@ -719,23 +725,153 @@ body {
   margin-bottom: 15px;
 }
 
+.news-item-thumbnail figcaption {
+  width: 112px;
+  text-align: center;
+}
 
 .news-more {
   position: absolute;
   top: -8px;
   right: -8px;
   padding: 8px;
-  font-size: 1.5rem;
 }
 
 /* 신규 이벤트 및 관련 사이트 */
 
-.gradient-effect {
-
+.event { 
+  border-bottom: 1px solid #aaa;
 }
 
-.accent-color {
-  color: #e85e2c;
+.event-title {
+  display: inline-block;
+}
+/* gap은 ie 지원이 안됌
+  디센더 영역을 없애려고 flex를 준 것 */
+.event-button-wrapper {
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 5px;
+  float: right;
+}
+
+/* IR기법 텍스트가 안보이게 하고 이미지가 보이게 하는 것 
+  Image replacemnet -padding, text-indent,  trick
+  font-size: 0;은 스크린 리더기가 못읽음 */
+.event-button {
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 18px 0 0 0;
+  background: url(./images/back_forward.png) no-repeat;
+}
+
+.event-button-next {
+  background-position: -36px 0;
+}
+
+.event-button:focus {
+  outline-offset: -2px;
+}
+
+.event-thumnail, 
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-thumnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.event-brief {
+  line-height: 1.5;
+}
+/* #eventDetail {
+  clear: both;
+  margin-top: 10px;
+} */
+
+.related {
+  margin-top: 10px;
+}
+
+.related-list {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-top: 10px;
+  /* transition-property: background-color, border-radius;
+  transition-duration: 2000ms, 2000ms;
+  transition-delay: 0ms, 2000ms;
+  transition-timing-function: ease-in-out;
+  transition: background-color 2000ms 0ms ease-in-out, boder-radius 2000ms 2000ms ease-in-out; */
+  height: 27px;
+  overflow: hidden;
+  transition-property: height, padding;
+  transition-duration: 400ms, 400ms;
+  transition-delay: 0ms, 400ms;
+}
+
+.related-list li {
+  height: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.related-list a {
+  flex-grow: 1;
+  padding: 0 10px;
+}
+
+  /* 끝나는 값이 auto이면 안된다 */
+.related-list:hover, 
+.related-list:focus {
+  /* border-radius: 15px 0 15px 0; */
+  height: 147px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* 인기사이트 */
+
+.site {
+  background-color: yellow;
+  position: relative;
+}
+
+.popular-site {
+  background-color: pink;
+}
+
+.ranking {
+  background-color: lime;
+  font-size: 1.4rem;
+}
+
+.ranking li {
+  margin-top: 5px;
+  display: flex;
+}
+
+.number {
+  display: inline-block;
+  border: none;
+  background-color: #666;
+  width: 10px;
+}
+
+.ranking-more {
+  background-color: lightblue;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
 }
 
 /* 슬로건 */
@@ -744,6 +880,7 @@ body {
   height: 10vh;
   clear: both;
 }
+
 /* 푸터 */
 .footer{
   background: #ccc 
