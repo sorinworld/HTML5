@@ -31,6 +31,7 @@ $( document ).ready(function() {
 		
 		var selectedId = "#"+$(this).attr('aria-controls');
 		//자신은 보이게하고 다른 tabpanel은 보이지 않게 지정한다.
-		$(selectedId).ad
+		$(selectedId).addClass('is-select').siblings().removeClass('is-select');
 });
 
+});
