@@ -11,6 +11,9 @@
 /* color: red -> 상속 가능 */
 /* box-sizing: border-box -> 상속 불가능 */
 
+html {
+  font-size: 10px;
+}
 /* 본문스타일 */
 body {
   color: #212121;
@@ -19,6 +22,7 @@ body {
   system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", 
   "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-weight: 100;
+  font-size: 14px;
 }
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer-inner{
@@ -29,15 +33,11 @@ body {
 .header{
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
 }
 
 .member { 
   background-color: pink;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
 }
 
 .member a{
@@ -89,58 +89,104 @@ a {
 
 /* 비주얼 */
 .visual{
-  background: orange;
-  height: 10vh;
+  height: 120px;
 }
 /* 메인 */
 .main{
-  background: lightgreen;
-  border-top: 1px solid red;
-  /* min-height: 450px; */
-  position: absolute;
-  /*display: flex;
-  flex-direction: flex;
-  flex-wrap: row nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px;*/
+  background: #fff;
+  min-height: 450px;
+  display: flow-root;
+  padding: 30px 15px;
 }
 .group {
-  height: 100px;
+  float: left;
 }
 .group1{
   background-color: violet;
   width: 250px;
-  float: right;
 }
 .group2{
   background-color: salmon;
   width: 380px;
-  float: right;
 }
 .group3{
   background-color: gold;
   /* flex-grow: 1; */
   width: 190px;
-  float: right;
+}
+
+/* 신규이벤트 및 관련사이트 */
+.gradient-effect {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.accent-color {
+  color: #a52aa5;
+}
+
+.margin-top-default {
+  margin-top: 20px;
+}
+
+.event {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #aaa;
+}
+
+.event-button-wrapper{
+  /* background-color: yellow; */
+  /* overflow: hidden; */
+  /* padding: 2px; */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.event-button {
+  width: 19px;
+  border: 0;
+  height: 18px;
+  padding: 0;
+  background: aqua url("./images/back_forward.png") no-repeat;
+}
+
+.event-button-next {
+  background-position: 100% 0;
+}
+.event-thumnail,
+.event-brief{
+  margin: 10px 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.related {
+  margin-top: 10px;
 }
 
 /* 슬로건 */
 .slogan{
   background: skyblue;
-  height: 10vh;
   clear: both;
 }
 /* 푸터 */
 .footer{
   background: gray;
-  height: 15vh;
-  margin: 0 auto;
 }
 .footer-inner{
   background: silver;
-  height: 15vh;
-  position: relative;
-  top: -10px;
-  left: -10;
 }
