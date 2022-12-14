@@ -8,10 +8,10 @@
   <link rel="stylesheet" as="style" crossorigin href=
   "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="./styles/style.css" />
-  <!-- defer를 추가함으로써 헤드안에 스크립트 넣어도 동작 -->
   <!-- <script src="./js/main.js" defer></script> -->
   <script src="./js/jquery.min.js"></script>
   <script src="./js/menu-tab.js"></script>
+  <!-- defer를 추가함으로써 헤드안에 스크립트 넣어도 동작 -->
 </head>
 <body>
   <header class="header">
@@ -46,7 +46,7 @@
             </li>
           </ul>
         </li>
-        <li class="menu-item ">
+        <li class="menu-item">
           <button type="button" class="menu-button">CSS에 대해</button>
           <ul class="sub-menu menu-css">
             <li>
@@ -229,7 +229,7 @@
           <li role="none"><button type="button" class="tab is-select" aria-selected="true" aria-controls="notice" id="noticeButton">공지사항</button></li>
           <li role="none"><button type="button" class="tab" aria-selected="false" aria-controls="archive" id="archiveButton">자료실</button></li>
         </ul>
-        <div class="notice tab-pannel is-select" role="tabpanel" id="notice" aria-labelledby="noticeButton">
+        <div class="notice tab-panel is-select" role="tabpanel" id="notice" aria-labelledby="noticeButton">
         <h2 class="a11y-hidden">공지사항</h2>
         <ul class="board-list">
           <li>
@@ -328,6 +328,18 @@
             <li><a href="/">Web Standards</a></li>
             <li><a href="/">W3C</a></li>
           </ul>
+        </section>
+      </div>
+      <div class="gradient-effect">
+        <section class="site">
+          <h2 class="popular-site text-xl">인기<span class="accent-color">사이트</span></h2>
+          <ul class="ranking">
+            <li><a href="/"><span class="number">1</span>W3C</a></li>
+            <li><a href="/"><span class="number">2</span>Web standards</a></li>
+            <li><a href="/"><span class="number">3</span>MDN</a></li>
+            <li><a href="/"><span class="number">4</span>CSS ZenGarden</a></li>
+          </ul>
+          <a href="" class="ranking-more more" title="인기사이트">더보기</a>
         </section>
       </div>
     </div>
