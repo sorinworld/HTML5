@@ -841,11 +841,10 @@ body {
 /* 인기사이트 */
 
 .favorite {
-  position: relative;
 }
 
 /* list-style-type:none을 주면 숫자를 스크린 리더가 안읽어줌
-  overflow: hidden;는 읽어줌 */
+overflow: hidden;는 읽어줌 */
 .favorite-list {
   background-color: yellow;
   list-style-type:none;
@@ -860,9 +859,7 @@ body {
   margin-top: 10px;
   counter-increment: number;
   background-color: pink;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  position: relative;
 }
 
 .favorite-list li::before {
@@ -895,14 +892,15 @@ body {
 } */
 
 .up, .stop, .down {
-  /* display: flex;
-  flex-flow: row nowrap; */
-  display: inline-block;
+  /* top으로 부모의 중간만큼에서 margin-top으로 6px만큼 끌어올려주는 것 */ 
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -6px;
   width: 9px;
   height: 11px;
   margin-left: auto;
   background: lime url(./images/rank.png) no-repeat 100% 0;
-  /* align-items: center; */
 }
 
 .stop {
